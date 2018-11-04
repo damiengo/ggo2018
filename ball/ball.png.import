@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/border.png-a4a7a5340f73f9267d6dc48e4760554a.stex"
+path="res://.import/ball.png-fe5cf1f159ed2817484efdf4cb8bda2a.stex"
 
 [deps]
 
-source_file="res://border.png"
-dest_files=[ "res://.import/border.png-a4a7a5340f73f9267d6dc48e4760554a.stex" ]
+source_file="res://ball/ball.png"
+dest_files=[ "res://.import/ball.png-fe5cf1f159ed2817484efdf4cb8bda2a.stex" ]
 
 [params]
 
