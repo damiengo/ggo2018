@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/border.png-a65e93e2d6baacf73ffff63afc118c10.stex"
+path="res://.import/element_red_square.png-df8c7bff92ba8a2ff148896624af3d64.stex"
 
 [deps]
 
-source_file="res://tiles/border.png"
-dest_files=[ "res://.import/border.png-a65e93e2d6baacf73ffff63afc118c10.stex" ]
+source_file="res://tiles/element_red_square.png"
+dest_files=[ "res://.import/element_red_square.png-df8c7bff92ba8a2ff148896624af3d64.stex" ]
 
 [params]
 
