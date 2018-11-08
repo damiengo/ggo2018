@@ -2,7 +2,12 @@
 
 [ext_resource path="res://tiles/bricks.tres" type="TileSet" id=1]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="t" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -24,5 +29,10 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 65537, 1, 0 )
 _sections_unfolded = [ "Cell" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 100, 0, 100, 30, 60, 30, 60, 60, 30, 60, 30, 30, 10, 30, 10, 30, 10, 0 )
 
 
