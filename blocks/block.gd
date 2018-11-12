@@ -15,11 +15,11 @@ func _physics_process(delta):
 	var collision = move_and_collide(motion)
 
 func _input(event):
-	var move_left = event.is_action_pressed("ui_left")
-	var move_right = event.is_action_pressed("ui_right")
-	
-	if move_left:
-		print("Move left")
-	
-	if move_right:
-		print("Move right")
+	if event.is_action_pressed("ui_left"):
+		velocity.x -= 1
+	if event.is_action_released("ui_left"):
+		velocity.x = 0
+	if event.is_action_pressed("ui_right"):
+		velocity.x += 1
+	if event.is_action_released("ui_right"):
+		velocity.x = 0
