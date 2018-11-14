@@ -3,7 +3,7 @@ extends Node
 var _block_size = 32
 
 var _block_types = [
-	preload("res://blocks/t.tscn")
+	preload("res://blocks/s.tscn")
 ]
 
 var _falling_blocks = []

@@ -4,6 +4,7 @@ extends KinematicBody2D
 
 var speed = 500
 var velocity = Vector2(0,0)
+var move_left_right = false
 
 func _ready():
 	velocity.x = 0
@@ -13,17 +14,22 @@ func _ready():
 func _physics_process(delta):
 	var motion = delta * velocity * speed
 	var collision = move_and_collide(motion)
-	print(fmod(position.x, 32))
+	# Adjust x position
+	if(!move_left_right and fmod(position.x, 32) < 3):
+		velocity.x = 0
+		position.x -= fmod(position.x, 32)
 
 func _input(event):
 	if event.is_action_pressed("ui_left"):
+		move_left_right = true
 		velocity.x -= 1
 	if event.is_action_pressed("ui_right"):
+		move_left_right = true
 		velocity.x += 1
 	if event.is_action_released("ui_left"):
-		velocity.x = 0
+		move_left_right = false
 	if event.is_action_released("ui_right"):
-		velocity.x = 0
+		move_left_right = false
 		
 	if event.is_action_pressed("ui_up"):
 		rotation += PI/2
