@@ -1,21 +1,55 @@
 extends Node
 
 var _block_size = 32
+var _x_offset = 1
+var _y_offset = 1
 
-var _block_types = [
-	preload("res://blocks/j.tscn"),
-	preload("res://blocks/l.tscn"),
-	preload("res://blocks/i.tscn"),
-	preload("res://blocks/o.tscn"),
-	preload("res://blocks/s.tscn"),
-	preload("res://blocks/t.tscn"),
-	preload("res://blocks/z.tscn")
-]
+var _block_types = {}
 
 var _falling_blocks = []
 
 func _ready():
-	var block_resource = _block_types[0]
+	_block_types.j = preload("res://blocks/j.tscn")
+	_block_types.l = preload("res://blocks/l.tscn")
+	_block_types.i = preload("res://blocks/i.tscn")
+	_block_types.o = preload("res://blocks/o.tscn")
+	_block_types.s = preload("res://blocks/s.tscn")
+	_block_types.t = preload("res://blocks/t.tscn")
+	_block_types.z = preload("res://blocks/z.tscn")
+	
+	#_test()
+	_add_blocks()
+
+#
+# Set new lines of blocks on top
+#
+func _add_blocks():
+	_add_block("o", 1,  1, 0)
+	_add_block("o", 3,  1, 0)
+	_add_block("i", 6,  1, 0)
+	_add_block("i", 6,  2, 0)
+	_add_block("l", 9,  1, 2)
+	_add_block("j", 1,  4, 2)
+	_add_block("z", 2,  3, 1)
+	_add_block("t", 4,  3, 3)
+	_add_block("t", 6,  3, 0)
+#
+# Add a block on the screen
+#  block_type   Type of the block (o, l, z, etc)
+#  x            x position
+#  y            y position
+#  nb_rotations Number of rotations to apply
+#
+func _add_block(block_type, x, y, nb_rotations):
+	var block_resource = _block_types[block_type]
+	var block = block_resource.instance()
+	block.position = Vector2(_block_size * (_x_offset+x), _block_size * (_y_offset+y))
+	for i in range(nb_rotations):
+		block.rotate()
+	add_child(block)
+
+func _test():
+	var block_resource = _block_types.z
 	var block = block_resource.instance()
 	block.position = Vector2(_block_size * 5, _block_size * 8)
 	add_child(block)
