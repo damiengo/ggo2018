@@ -13,4 +13,6 @@ func _physics_process(delta):
 	var motion = delta * velocity * speed	
 	var collision = move_and_collide(motion)
 	if collision:
+		if(collision.collider is KinematicBody2D):
+			collision.collider.fall()
 		velocity = velocity.bounce(collision.normal)

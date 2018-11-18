@@ -5,24 +5,26 @@ extends KinematicBody2D
 var speed = 500
 var velocity = Vector2(0,0)
 var move_left_right = false
-var is_falling = false
+var _on_floor = false
 
 func _ready():
 	velocity.x = 0
-	velocity.y = 1
+	velocity.y = 0
 	set_process_input(true) 
 
 func _physics_process(delta):
-	if is_falling:
-		var motion = delta * velocity * speed
-		var collision = move_and_collide(motion)
-		# Adjust x position
-		if(!move_left_right and fmod(position.x, 32) < 3):
-			velocity.x = 0
-			position.x -= fmod(position.x, 32)
+	var motion = delta * velocity * speed
+	var collision = move_and_collide(motion)
+	if collision and collision.normal.y == -1 and (collision.collider is TileMap or collision.collider.is_on_floor()):
+		velocity.y = 0
+		_on_floor = true
+	# Adjust x position
+	if(!move_left_right and fmod(position.x, 32) < 1):
+		velocity.x = 0
+		position.x -= fmod(position.x, 32)
 
 func _input(event):
-	if is_falling:
+	if velocity.y != 0 and !_on_floor:
 		if event.is_action_pressed("ui_left"):
 			move_left_right = true
 			velocity.x -= 1
@@ -37,5 +39,12 @@ func _input(event):
 		if event.is_action_pressed("ui_up"):
 			rotate()
 
+func fall():
+	if(!_on_floor):
+		velocity.y = 1
+
 func rotate():
 	rotation += PI/2
+
+func is_on_floor():
+	return _on_floor
