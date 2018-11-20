@@ -27,12 +27,12 @@ func _add_blocks():
 	_add_block("o", 1,  1, 0)
 	_add_block("o", 3,  1, 0)
 	_add_block("i", 6,  1, 0)
-	_add_block("i", 6,  2, 0)
-	_add_block("l", 9,  1, 2)
-	_add_block("j", 1,  4, 2)
-	_add_block("z", 2,  3, 1)
-	_add_block("t", 4,  3, 3)
-	_add_block("t", 6,  3, 0)
+	#_add_block("i", 6,  2, 0)
+	#_add_block("l", 9,  1, 2)
+	#_add_block("j", 1,  4, 2)
+	#_add_block("z", 2,  3, 1)
+	#_add_block("t", 4,  3, 3)
+	#_add_block("t", 6,  3, 0)
 #
 # Add a block on the screen
 #  block_type   Type of the block (o, l, z, etc)

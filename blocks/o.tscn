@@ -10,17 +10,18 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -30, -30 )
+position = Vector2( -32, -32 )
 texture = ExtResource( 2 )
 offset = Vector2( 16, 16 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="Sprite2" type="Sprite" parent="." index="1"]
 
-position = Vector2( 0, -30 )
+position = Vector2( 0, -32 )
 texture = ExtResource( 2 )
 offset = Vector2( 16, 16 )
 _sections_unfolded = [ "Offset" ]
@@ -33,14 +34,15 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="Sprite4" type="Sprite" parent="." index="3"]
 
-position = Vector2( -30, 0 )
+position = Vector2( -32, 0 )
 texture = ExtResource( 2 )
 offset = Vector2( 16, 16 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="4"]
 
+position = Vector2( 96, 0 )
 build_mode = 0
-polygon = PoolVector2Array( -30, -30, 30, -30, 30, 30, -30, 30 )
+polygon = PoolVector2Array( -128, -32, -64, -32, -64, 32, -128, 32 )
 
 
