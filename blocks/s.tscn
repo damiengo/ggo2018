@@ -41,6 +41,6 @@ _sections_unfolded = [ "Offset" ]
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="4"]
 
 build_mode = 0
-polygon = PoolVector2Array( 0, -32, 64, -32, 64, 0, 32, 0, 32, 32, -32, 32, -32, 0, 0, 0 )
+polygon = PoolVector2Array( 4, -28, 60, -28, 60, -4, 28, -4, 28, 28, -28, 28, -28, 4, 4, 4 )
 
 

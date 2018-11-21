@@ -3,7 +3,7 @@
 [ext_resource path="res://blocks/block.gd" type="Script" id=1]
 [ext_resource path="res://tiles/element_green_square.png" type="Texture" id=2]
 
-[node name="z" type="KinematicBody2D" index="0"]
+[node name="z" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -41,6 +41,6 @@ _sections_unfolded = [ "Offset" ]
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="4"]
 
 build_mode = 0
-polygon = PoolVector2Array( -32, -64, 0, -64, 0, 0, 32, 0, 32, 32, -32, 32 )
+polygon = PoolVector2Array( -28, -60, -4, -60, -4, 4, 28, 4, 28, 28, -28, 28 )
 
 
