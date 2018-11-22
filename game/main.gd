@@ -17,8 +17,8 @@ func _ready():
 	_block_types.t = preload("res://blocks/t.tscn")
 	_block_types.z = preload("res://blocks/z.tscn")
 	
-	#_test()
-	_add_blocks()
+	_test()
+	#_add_blocks()
 
 #
 # Set new lines of blocks on top
@@ -54,3 +54,4 @@ func _test():
 	block.position = Vector2(_block_size * 5, _block_size * 8)
 	add_child(block)
 	_falling_blocks.append(block)
+	block.fall()

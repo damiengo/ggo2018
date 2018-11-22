@@ -14,7 +14,7 @@ func _ready():
 	velocity.y = 0
 	set_process_input(true) 
 
-func _physics_process(delta):
+func _physics_process(delta):	
 	var motion = delta * velocity * speed
 	var collision = move_and_collide(motion)
 	if !_on_floor and collision and collision.normal.y == -1 and (collision.collider is TileMap or collision.collider.is_on_floor()):
@@ -25,7 +25,10 @@ func _physics_process(delta):
 		player.play()
 		_on_floor = true
 	# Adjust x position
-	if(!move_left_right): #and fmod(position.x, 32) < 1):
+	if(!move_left_right) and :
+		print("========")
+		print(position)
+		print(position.snapped(Vector2(32,32)))
 		velocity.x = 0
 		position.x -= fmod(position.x, 32)
 
