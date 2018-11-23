@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # Example: https://www.youtube.com/watch?v=4CLvL05Av6g
 
-var speed = 800
+var speed = 500
 var velocity = Vector2(0,0)
 
 func _ready():
