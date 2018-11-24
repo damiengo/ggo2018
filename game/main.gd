@@ -54,15 +54,10 @@ func _draw_level(index):
 	
 	# Draw blocks
 	if index == 1:
-		# Top walls
-		_add_block("_", 7, 1, 0)
-		_add_block("_", 7, 2, 0)
-		_add_block("_", 7, 3, 0)
 		# Blocks
 		_add_block("i", 3, 1, 0)
 		_add_block("t", 5, 3, 1)
-		# Targets
-		_add_block("sel", 10, 18, 0)
+		_add_block("o", 6, 3, 1)
 
 #
 # Add a block on the screen

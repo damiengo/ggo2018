@@ -4,7 +4,7 @@ extends KinematicBody2D
 
 const sounds = preload("res://sounds/audio.tscn")
 
-var speed = 3*00
+var speed = 300
 var velocity = Vector2(0,0)
 var move_left_right = false
 var _on_floor = false
@@ -20,11 +20,19 @@ func _physics_process(delta):
 	if !_on_floor and collision and collision.normal.y < 0 and (collision.collider.is_in_group("wall") or collision.collider.is_on_floor()):
 		velocity.y = 0
 		_stop_move_left_right()
+		_on_floor = true
+		# Completed blocks
+		print("====")
+		print(global_position/32)
+		print(get_node("Sprite").global_position/32)
+		print(get_node("Sprite2").global_position/32)
+		print(get_node("Sprite3").global_position/32)
+		print(get_node("Sprite4").global_position/32)
+		# Sound
 		var player = AudioStreamPlayer.new()
 		self.add_child(player)
 		player.stream = load("res://sounds/fruit_collect_1.wav")
 		player.play()
-		_on_floor = true
 
 func _input(event):
 	if velocity.y != 0 and !_on_floor:
